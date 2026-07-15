@@ -1,0 +1,21 @@
+1. Who are the stakeholders for this small banking system?
+Bank staff (users), customers (indirectly, via account correctness), the developer/team, and possibly a QA/compliance reviewer.
+
+2. What does quality mean to each stakeholder?
+Staff want ease of use and reliability; customers want correctness (right balance, no unexpected overdrafts); developers want maintainable, testable code; auditors/compliance want validation and traceability.
+
+3. Which defects were detected through testing?
+Overdraft allowed (withdrawing more than the balance), and negative amounts allowed (negative deposits, withdrawals, and opening balances all silently accepted).
+
+4. Which defects could have been prevented through QA activities?
+The same ones : if requirements/validation rules had been defined upfront via a checklist (as in Activity 4's QA example) instead of only being caught by testing after the fact.
+
+5. How did Copilot help?
+GitHub Copilot, I used to brainstorm test ideas for boundary values and invalid inputs. It quickly generated a structured list covering the constructor, Deposit, Withdraw, and CalculateTransactionFee methods, including boundary cases I hadn't initially considered — such as withdrawing the exact balance (not just more/less than it) and treating zero as a rejected input alongside negative numbers. This sped up my test planning, but the suggestions still needed review before use.
+
+6. What Copilot suggestion did you reject or modify, and why?
+I rejected the suggestion to test very large amounts (e.g. decimal.MaxValue) for overflow behavior, since that isn't a stated requirement in the lab brief — it would be testing .NET's decimal type rather than my own business logic. I also modified the suggested rounding test: it proposed checking an amount like 33.335 to confirm Math.Round behaves "as expected," but C#'s Math.Round uses banker's rounding (round-half-to-even) by default, not standard round-half-up : so I'd need to calculate the correct expected result under that rule rather than assume a naive rounding outcome.
+
+7. What is the difference between QA and QC in this lab?
+QA was writing standards/checklists and reviewing requirements before coding; 
+QC was actually running the unit tests and catching the overdraft bug.
