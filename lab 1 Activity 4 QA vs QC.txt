@@ -1,0 +1,33 @@
+Activity 4 QA vs QC
+Write a short note: 
+
+QA (Quality Assurance) is process-focused and preventive: improving how you build software so defects don't happen. 
+
+QC (Quality Control) is product-focused and detective: testing the actual output to find defects that already exist.
+Classify:
+
+Writing coding standards for money calculations
+QA (preventive process)
+
+Running unit tests for withdrawal
+QC (checking the product)
+
+Reviewing requirements for ambiguity
+QA (prevents defects before coding)
+
+Testing negative deposit input
+QC
+
+Analysing repeated transaction defects
+QA (root-cause/process improvement)
+
+Reporting a failed test case
+QC
+
+Creating a checklist for financial validation rules
+QA
+
+Retesting after fixing withdrawal logic
+QC
+
+Discussion: Tests only catch what you thought to test for: they don't fix ambiguous requirements, bad design decisions, or process gaps. A codebase can pass every test and still be low quality (unmaintainable, insecure, poorly understood).
