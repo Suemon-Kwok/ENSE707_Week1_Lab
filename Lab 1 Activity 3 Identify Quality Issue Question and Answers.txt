@@ -1,0 +1,15 @@
+Activity 3 — Identify Quality Issues
+Please inspect the code and answer the following questions:
+1. What happens if the opening balance is negative? Silently accepted, no error.
+
+2. What happens if a deposit amount is negative? Silently accepted, balance can go down via "deposit."  
+
+3. What happens if a withdrawal amount is greater than the balance? balance → silently allowed, balance goes negative (overdraft), Withdraw still returns true.
+
+4. Is the transaction fee calculation clearly documented? Fee calculation isn't documented (no comment/XML doc explaining the 2% rule or rounding)
+
+5. Is the class easy to test? Not very testable in isolation for invalid input, since there's no way to assert failure — everything "succeeds" silently.
+
+6. What functional requirements are missing? Missing: input validation, overdraft prevention, negative amount checks, maybe a transaction history/log.
+
+7. What non-functional quality attributes are relevant? Non-functional attributes relevant: reliability, correctness, security (data integrity), maintainability, usability (clear error messages)
