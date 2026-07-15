@@ -1,0 +1,9 @@
+1. Why does regular committing support software quality?
+
+Frequent commits create small, reviewable checkpoints: easier to spot when a defect was introduced, easier to roll back, and it forces you to build/test in small increments rather than one big risky change.
+
+
+
+2. How can Git history provide evidence of individual progress?
+
+Commit timestamps, messages, and diffs (via git log, git blame) show who wrote what and when: useful evidence in a team project for individual contribution.
